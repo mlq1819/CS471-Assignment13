@@ -245,13 +245,13 @@ Problem 10 Answer:
 
 > hammingFactorization :: Integer -> Integer -> Bool
 > hammingFactorization n 5
->    | mod n 5 == 0  = hammingFactorization (n/5) 5
+>    | mod n 5 == 0  = hammingFactorization (div n 5) 5
 >    | otherwise     = hammingFactorization n 3
 > hammingFactorization n 3
->    | mod n 3 == 0  = hammingFactorization (n/3) 3
+>    | mod n 3 == 0  = hammingFactorization (div n 3) 3
 >    | otherwise     = hammingFactorization n 2
 > hammingFactorization n 2
->    | mod n 2 == 0  = hammingFactorization (n/2) 2
+>    | mod n 2 == 0  = hammingFactorization (div n 2) 2
 >    | otherwise     = (mod 1 n == 0)
 
 > hamming :: [Integer]
