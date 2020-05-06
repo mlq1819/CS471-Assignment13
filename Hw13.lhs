@@ -67,7 +67,7 @@ or
 
 Problem 3 Answer:
 
-> sumH n = foldr (\x y-> x+1/y) 0 [1..n]
+> sumH n = foldr (\x y-> y+1/x) 0 [1..n]
 
 Problem 4: In a previous assignment, you wrote a function to create the 
 next value in the Thue-Morse sequence.  Below is one possible solution.
