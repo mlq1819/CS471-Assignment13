@@ -126,10 +126,11 @@ and returns a list containing the values.
 
 Problem 6 Answer:
 
-  >  flattenT :: [(a,a)] -> [a]
-  
-  >  flattenR :: [(a,a)] -> [a]
+> flattenT :: [(a,a)] -> [a]
+> flattenT lst = foldr (\(a,b) x -> a : (b : x)) [] lst
 
+> flattenR :: [(a,a)] -> [a]
+> flattenR lst = foldr (\(a,b) x -> x ++ (b : [a])) [] lst
 
 Problem 7: An inductive definition of a binary tree and a pretty print function 
 was provided in a previous assignment (repeated below).
@@ -192,7 +193,9 @@ accumulating (combining) values along the way.
 
 Problem 7 Answer:
 
-  > tree_fold :: (a -> b -> a) -> a -> Tree b -> a
+> tree_fold :: (a -> b -> a) -> a -> Tree b -> a
+> tree_fold f v Nil = v
+> tree_fold f v (Node a (b) (c)) = (tree_fold f (f (tree_fold f v b) a) c)
   
 
 Problem 8: To demonstrate the computational power of tree_fold, write a function
