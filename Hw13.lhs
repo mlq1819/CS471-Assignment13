@@ -244,7 +244,6 @@ so-called Hamming numbers:
 Problem 10 Answer:
 
 > hammingFactorization :: Integer -> Integer -> Bool
-> hammingFactorization 1 n = 1
 > hammingFactorization n 5
 >    | mod n 5 == 0  = hammingFactorization (n/5) 5
 >    | otherwise     = hammingFactorization n 3
@@ -253,7 +252,7 @@ Problem 10 Answer:
 >    | otherwise     = hammingFactorization n 2
 > hammingFactorization n 2
 >    | mod n 2 == 0  = hammingFactorization (n/2) 2
->    | otherwise     = mod 1 n
+>    | otherwise     = (mod 1 n == 0)
 
 > hamming :: [Integer]
 > hamming = [n | n <- [1,2..], hammingFactorization n 5]
