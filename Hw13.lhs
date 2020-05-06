@@ -18,7 +18,7 @@ Question 2: Redefine set using primitive recursion with guards (setG)
 Question 3: Redefine set using primitive recursion with pattern matching style (setP)
 
 > setP :: (Eq n, Num n) => n -> [n]
-> setP 1 = 1
+> setP 1 = [1]
 > setP n = (n * n) : (setP (n-1))
 
 Question 4: Redefine set but use map (setM)
