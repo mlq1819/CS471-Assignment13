@@ -58,4 +58,4 @@ Define prodPRLHOF to be equivalent to prodPRL but using a fold
 
 > prodPRLHOF nums
 >    | length nums == 0  = []
->    | otherwise         = (foldr (*) 1 nums) : prodPRLHOF (tail nums)
+>    | otherwise         = (foldr (*) 1 nums) : (prodPRLHOF (tail nums))
