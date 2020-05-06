@@ -16,6 +16,7 @@ Question 2: Redefine set using primitive recursion with guards (setG)
 
 Question 3: Redefine set using primitive recursion with pattern matching style (setP)
 
+> setP :: (Num n) => n -> n
 > setP 1 = 1
 > setP n = (n * n) : setP (n-1)
 
