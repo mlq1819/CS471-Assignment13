@@ -95,6 +95,13 @@ instead of list comprehension.
 
 Problem 5 Answer:
 
+> thueSeqMap :: (Num a) => a -> [[Integer]]
+> thueSeqMap = thueSeqMapHelper n (take n (repeat [0]))
+> thueSeqMapHelper lst
+>    | length lst == 0  = []
+>    | length lst == 1  = map thue lst
+>    | otherwise        = (head lst) : (thueSeqMapHelper (tail lst))
+
 
 Problem 6:
 Using an HOF (map, fold and/or filter ) define a function that takes a list of pairs
