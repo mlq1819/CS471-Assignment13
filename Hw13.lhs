@@ -244,13 +244,13 @@ so-called Hamming numbers:
 Problem 10 Answer:
 
 > twoPowers :: [Integer]
-> twoPowers = [2^x | x <- [0,1,2..]]
+> twoPowers = [2^x | x <- [0,1..]]
 
 > threePowers :: [Integer]
-> threePowers = [3^x | x <- [0,1,2..]]
+> threePowers = [3^x | x <- [0,1..]]
 
 > fivePowers :: [Integer]
-> fivePowers = [5^x | x <- [0,1,2..]]
+> fivePowers = [5^x | x <- [0,1..]]
 
 > hamming :: [Integer]
 > hamming = [x*y*z | x <- twoPowers y <- threePowers z <- fivePowers]
