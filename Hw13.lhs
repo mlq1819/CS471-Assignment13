@@ -87,8 +87,8 @@ For example:
 
 Problem 4 Answer:
   
-    > thueSeq :: [[Integer]]
-   
+> thueSeq :: [[Integer]]
+> thueSeq = [(thue x)| x <- [[0]:thueSeq]]
 
 Problem 5: Define thueSeqMap to be equivalent to thueSeq but using map
 instead of list comprehension.
