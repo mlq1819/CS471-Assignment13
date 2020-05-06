@@ -95,7 +95,7 @@ instead of list comprehension.
 
 Problem 5 Answer:
 
-> thueSeqMap :: (Num a) => a -> [[Integer]]
+> thueSeqMap :: (Int a) => a -> [[Integer]]
 > thueSeqMap n = (thueSeqMapHelper (replicate n [0]))
 > thueSeqMapHelper :: [[Integer]] -> [[Integer]]
 > thueSeqMapHelper lst
