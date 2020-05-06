@@ -13,13 +13,13 @@ Question 2: Redefine set using primitive recursion with guards (setG)
 > setG :: (Eq n, Num n) => n -> [n]
 > setG n
 >    | n == 1     = [n * n]
->    | otherwise  = (n * n) : (setG (n-1))
+>    | otherwise  = (setG (n-1)) ++ [n * n]
 
 Question 3: Redefine set using primitive recursion with pattern matching style (setP)
 
 > setP :: (Eq n, Num n) => n -> [n]
 > setP 1 = [1]
-> setP n = (n * n) : (setP (n-1))
+> setP n = (setP (n-1)) ++ [n * n]
 
 Question 4: Redefine set but use map (setM)
 
