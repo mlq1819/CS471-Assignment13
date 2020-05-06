@@ -101,7 +101,7 @@ Problem 5 Answer:
 > thueSeqMapHelper lst
 >    | length lst == 0  = []
 >    | length lst == 1  = map thue lst
->    | otherwise        = (head lst) : (thueSeqMapHelper (tail lst))
+>    | otherwise        = (head lst) : (map thue (thueSeqMapHelper (tail lst)))
 
 
 Problem 6:
