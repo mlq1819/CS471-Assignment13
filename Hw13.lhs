@@ -1,6 +1,8 @@
 Michael Quinn
 Part 1
 
+Section A
+
 > set= [x*x | x <- [1..10]]
 
 Question 1: How would you describe set with your own words?
@@ -19,5 +21,5 @@ Question 3: Redefine set using primitive recursion with pattern matching style (
 
 Question 4: Redefine set but use map (setM)
 
-> setM n = map (n -> n*n) [1,2,3,4,5,6,7,8,9,10]
+> setM n = map (\n -> n*n) [1,2,3,4,5,6,7,8,9,10]
 
