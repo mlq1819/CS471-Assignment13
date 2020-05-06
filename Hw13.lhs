@@ -27,6 +27,7 @@ Question 4: Redefine set but use map (setM)
 > setM = map (\n -> n*n) [1,2,3,4,5,6,7,8,9,10]
 
 Section B
+Problem 1:
 
 > mm f g = (.) (map f) (map g)
 
@@ -46,3 +47,15 @@ Question 4. Define mm2 to be equivalent to mm but only using one 'map' applicati
 
 > mm2 :: (b -> c) -> (a -> c) -> [c]
 > mm2 f g = map((.) f g)
+
+Problem 2: "prodPRL nums" produces a list of partial products of the numbers in nums, in which the first value in the resulting list is the product of all the items, the second is the list of all but the first item in the list, etc; and the last element ends up equal to simply the last element in nums.
+Define prodPRLHOF to be equivalent to prodPRL but using a fold
+
+> prodPRL (l:ls) = prods [l] ls
+>   where
+>    prods (a:as) (n:ns) = prods ((a*n):a:as) ns
+>    prods as []  = as
+
+> prodPRLHOF nums
+>    | length nums == 0  = []
+>    | otherwise         = (foldr (*) 1 nums) : prodPRLHOF (tail nums)
