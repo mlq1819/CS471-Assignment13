@@ -205,7 +205,8 @@ think about is the lambda that should build the list.
 
 Problem 8 Answer:
 
-   > inorder_list :: Tree a -> [a]
+> inorder_list :: Tree a -> [a]
+> inorder_list tree = tree_fold (\x y -> x ++ [y]) [] tree
 
 
 Problem 9: Define a function merge that takes two lists where all the
@@ -219,7 +220,10 @@ with all the elements of both still in increasing order.
 
 Problem 9 Answer:
 
-
+> merge :: (Ord a, Num a) => [a] -> [a] -> [a]
+> merge [] b = b
+> merge a [] = a
+> merge a b = if (head a) < (head b) then (head a) : (merge (tail a) b) else (head b) : (merge a (tail b))
 
 Problem 10:  (Thompson 17.24/30 )
 Define the list of numbers whose only prime factors are 2, 3, and 5, the
