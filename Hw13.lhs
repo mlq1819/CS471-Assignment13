@@ -243,5 +243,14 @@ so-called Hamming numbers:
 
 Problem 10 Answer:
 
-> haming :: [Integer]
-> hamming = [x*y*z | x <- [1,2,4,8..] y <- [1,3,9,27..] z <- [1,5,25,125..]]
+> twoPowers :: [Integer]
+> twoPowers = [2^x | x <- [0,1,2..]]
+
+> threePowers :: [Integer]
+> threePowers = [3^x | x <- [0,1,2..]]
+
+> fivePowers :: [Integer]
+> fivePowers = [5^x | x <- [0,1,2..]]
+
+> hamming :: [Integer]
+> hamming = [x*y*z | x <- twoPowers y <- threePowers z <- fivePowers]
