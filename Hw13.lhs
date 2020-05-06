@@ -243,14 +243,17 @@ so-called Hamming numbers:
 
 Problem 10 Answer:
 
-> twoPowers :: [Integer]
-> twoPowers = [2^x | x <- [0,1..]]
-
-> threePowers :: [Integer]
-> threePowers = [3^x | x <- [0,1..]]
-
-> fivePowers :: [Integer]
-> fivePowers = [5^x | x <- [0,1..]]
+> hammingFactorization :: Integer -> Integer -> Bool
+> hammingFactorization 1 n = 1
+> hammingFactorization n 5
+>    | mod n 5 == 0  = hammingFactorization (n/5) 5
+>    | otherwise     = hammingFactorization n 3
+> hammingFactorization n 3
+>    | mod n 3 == 0  = hammingFactorization (n/3) 3
+>    | otherwise     = hammingFactorization n 2
+> hammingFactorization n 2
+>    | mod n 2 == 0  = hammingFactorization (n/2) 2
+>    | otherwise     = mod 1 n
 
 > hamming :: [Integer]
-> hamming = [n | x <- twoPowers, y <- threePowers, z <- fivePowers, n <- [1,2..], n==x*y*z]
+> hamming = [n | n <- [1,2..], hammingFactorization n 5]
