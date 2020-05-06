@@ -242,3 +242,6 @@ so-called Hamming numbers:
   (http://bingweb.binghamton.edu/%7Ehead/CS471/NOTES/HASKELL/4hF02.html)) 
 
 Problem 10 Answer:
+thueSeq = [(thue x) | x <- ([0]:thueSeq)]
+
+hamming = [x*y*z | x <- [1,2,4,8..] y <- [1,3,9,27..] z <- [1,5,25,125..]]
