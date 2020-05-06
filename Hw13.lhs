@@ -35,7 +35,7 @@ You will need to specify the type of composeHOF; you can use the type provided.
 Problem 2 Answer:
 
 > composeHOF :: Foldable t => t (b -> b) -> b -> b
-> composeHOF lst v = foldr v lst
+> composeHOF lst v = v foldr (.) lst
 
 
 Problem 3: The harmonic series is the following infinite series:
