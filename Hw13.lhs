@@ -12,6 +12,8 @@ has the same effect as
 
 Problem 1 Answer:
 
+sec1: ((+)1)
+sec2: ((>)-1)
 	
 Problem 2: In a previous assignment, you used primitive recursion to define a
 function composeList. composeList took a list of functions and composed them
@@ -32,8 +34,9 @@ You will need to specify the type of composeHOF; you can use the type provided.
 
 Problem 2 Answer:
 
- > composeHOF :: Foldable t => t (b -> b) -> b -> b
- 
+> composeHOF :: Foldable t => t (b -> b) -> b -> b
+> composeHOF lst v = foldr v lst
+
 
 Problem 3: The harmonic series is the following infinite series:
                             1   1   1   1               1
