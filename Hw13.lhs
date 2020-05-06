@@ -253,4 +253,4 @@ Problem 10 Answer:
 > fivePowers = [5^x | x <- [0,1..]]
 
 > hamming :: [Integer]
-> hamming = [x*y*z | x <- twoPowers y <- threePowers z <- fivePowers]
+> hamming = [x*y*z | x <- twoPowers, y <- threePowers, z <- fivePowers]
